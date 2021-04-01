@@ -21,7 +21,7 @@ function App() {
         <Navbar/>
         <Container>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home/>
           </Route>
           <PrivateRouter path="/admin">
@@ -33,9 +33,9 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
-          <Route path="/cart/:bookID">
+          <PrivateRouter path="/cart/:bookID">
           <Cart/>
-          </Route>
+          </PrivateRouter>
           <Route path="/orders">
             <Orders/>
           </Route>

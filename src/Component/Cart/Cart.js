@@ -14,14 +14,17 @@ const Cart = () => {
             .then(data => setBooks(data[0]))
     }, [bookID])
     const placeOrder=()=>{
-const orders= {...book, ...loggedinuser}
+let orders= {...book, ...loggedinuser}
+const neworders={...orders,date:new Date()}
+console.log(neworders)
+
 const url = `http://localhost:8080/saveorder`;
 fetch(url, {
     method: 'POST',
     headers: {
         'content-type': 'application/json'
     },
-    body: JSON.stringify(orders)
+    body: JSON.stringify(neworders)
 })
     .then(res => console.log('server side response ', res))
 
@@ -37,7 +40,7 @@ fetch(url, {
                 </div>
                 <div className="border-bottom mt-3  d-flex justify-content-between">
                     <p>{book.bookName}</p>
-                    <p>1</p>
+                    <p>{book.length || 1}</p>
                     <p>$ {book.price}</p>
                 </div>
                 <div className="mt-3  d-flex justify-content-between">
