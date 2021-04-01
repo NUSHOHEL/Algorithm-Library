@@ -1,0 +1,13 @@
+.sideNavBar{
+    height: 100vh;
+    background-color: rgb(2, 2, 37) !important;
+    color: white;
+}
+.addbook{
+    height: fit-content;
+    background-color:rgb(220, 216, 216) !important;
+}
+.navstyle a{
+    background-color: inherit !important;
+    border-radius: 15px !important;
+}
