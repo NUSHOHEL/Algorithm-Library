@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./ManageBook.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faEdit, faPenSquare } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt,  faPenSquare } from '@fortawesome/free-solid-svg-icons'
 
 const ManageBook = () => {
     const [books, setbooks] = useState([])

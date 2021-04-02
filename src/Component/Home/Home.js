@@ -22,6 +22,12 @@ const Home = () => {
             </div>
             <div className="d-flex flex-wrap justify-content-around mt-5">
                 {
+                    books.length === 0 && <div class="text-center" style={{width:'5rem', height:'5rem'}}>
+                    <div class="spinner-grow" role="status">
+                    </div>
+                  </div>
+                }
+                {
                     books.map(book => <Books book={book} ></Books>)
                 }
             </div>

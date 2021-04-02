@@ -45,8 +45,8 @@ const Login = () => {
 
     }
     return (
-        <div className="w-100 text-center">
-        <button className="btn btn-primary" onClick={googlesignin}>Login With Google</button>
+        <div className="login text-center">
+        <button className="btn btn-primary justify-content-middle" onClick={googlesignin}>Login With Google</button>
      </div>
     );
 };

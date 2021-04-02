@@ -24,24 +24,24 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route path="/admin">
+          <PrivateRouter path="/admin">
               <Admin/>
-          </Route>
+          </PrivateRouter>
           <Route path="/home">
             <Home/>
           </Route>
           <Route path="/login">
             <Login/>
           </Route>
-          <Route path="/cart/:bookID">
+          <PrivateRouter path="/cart/:bookID">
           <Cart/>
-          </Route>
-          <Route path="/orders">
+          </PrivateRouter>
+          <PrivateRouter  path="/orders">
             <Orders/>
-          </Route>
-          <Route path="/cart">
+          </PrivateRouter>
+          <PrivateRouter path="/cart">
             <Cart/>
-          </Route>
+          </PrivateRouter>
         </Switch>
         </Container>
     </Router>
