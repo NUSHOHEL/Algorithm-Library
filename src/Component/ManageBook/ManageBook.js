@@ -5,19 +5,29 @@ const ManageBook = () => {
     const [books, setbooks] = useState([])
     console.log(books);
     useEffect(() => {
-        fetch('http://localhost:8080/books')
+        fetch('https://rhubarb-crisp-91077.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setbooks(data))
     }, [])
     const deleteBook = (id) => {
         console.log(id)
-        fetch(`http://localhost:8080/delete/${id}`, {
+        fetch(`https://rhubarb-crisp-91077.herokuapp.com/delete/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(result => {
                 console.log('deleted success');
             })
+    }
+    const editBook=(id)=>{
+        console.log(id)
+        fetch(`https://rhubarb-crisp-91077.herokuapp.com/books/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data[0])
+        })
+            
+
     }
 
     return (
@@ -37,7 +47,7 @@ const ManageBook = () => {
                             <th scope="row">{book.bookName}</th>
                             <td>{book.author} </td>
                             <td>{book.price} </td>
-                            <td><button>Edit</button>
+                            <td><button onClick={()=>editBook(book._id)}>Edit</button>
                             <button onClick={() => deleteBook(book._id)}>
                                 Delete
                             </button>
@@ -47,7 +57,7 @@ const ManageBook = () => {
                     }
                 </table>
             </div>
-
+                      
         </div>
     );
 };

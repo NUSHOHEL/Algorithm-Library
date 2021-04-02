@@ -6,17 +6,25 @@ const Home = () => {
     const [books, setbooks] = useState([])
     console.log(books);
     useEffect(() => {
-        fetch('http://localhost:8080/books')
+        fetch('https://rhubarb-crisp-91077.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setbooks(data))
     }, [])
     return (
-        <div className="bg-light w-100">
-           <div className="row justify-content-around">
-           {
-                books.map(book => <Books book={book} ></Books> )
-            }
-           </div>
+        <div className="bg-light">
+            <div className="d-flex justify-content-center p-5">
+                <div className=" input-group w-50">
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">Search</span>
+                    </div>
+                </div>
+            </div>
+            <div className="d-flex flex-wrap justify-content-around mt-5">
+                {
+                    books.map(book => <Books book={book} ></Books>)
+                }
+            </div>
         </div>
     );
 };

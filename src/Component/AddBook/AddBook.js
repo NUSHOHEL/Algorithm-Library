@@ -34,7 +34,7 @@ const AddBook = ({ data }) => {
                 bookName: data.Book,
                 image: image
             }
-            const url = `http://localhost:8080/addBooks`;
+            const url = `https://rhubarb-crisp-91077.herokuapp.com/addBooks`;
             fetch(url, {
                 method: 'POST',
                 headers: {

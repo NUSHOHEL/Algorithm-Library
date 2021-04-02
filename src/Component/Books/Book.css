@@ -1,7 +1,11 @@
 .design{
     width: 300px;
-    height: 500px;
+    height: 400px;
+   border-radius: 20px !important;
 }
 .design img{
-    height: 330px;
+    height: 250px;
+}
+.design h5{
+    width:max-content;
 }

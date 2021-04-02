@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import { Usercontext } from '../../App';
 
 const Cart = () => {
@@ -7,9 +7,12 @@ const Cart = () => {
     // console.log(loggedinuser)
     const [book, setBooks] = useState([])
     const { bookID } = useParams()
+    let history = useHistory();
+    let location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
     // console.log(book);
     useEffect(() => {
-        fetch(`http://localhost:8080/books/${bookID}`)
+        fetch(`https://rhubarb-crisp-91077.herokuapp.com/books/${bookID}`)
             .then(res => res.json())
             .then(data => setBooks(data[0]))
     }, [bookID])
@@ -18,7 +21,7 @@ let orders= {...book, ...loggedinuser}
 const neworders={...orders,date:new Date()}
 console.log(neworders)
 
-const url = `http://localhost:8080/saveorder`;
+const url = `https://rhubarb-crisp-91077.herokuapp.com/saveorder`;
 fetch(url, {
     method: 'POST',
     headers: {
@@ -26,12 +29,16 @@ fetch(url, {
     },
     body: JSON.stringify(neworders)
 })
-    .then(res => console.log('server side response ', res))
-
+    .then(res => {
+        alert('Congratulation! Your Order Have Been Placed', res)
+       
+    })
+    history.replace(from);
+   
     }
     return (
-        <div>
-            <div className="mt-5 shadow p-3 mb-5 bg-body rounded-3 ">
+        <div className="p-5 mt-5">
+            <div className="mt-5 shadow p-3 mb-5 bg-body ">
                 <h1>Check Out</h1>
                 <div className="border-bottom mt-5 d-flex justify-content-between">
                     <p> <strong>Description</strong></p>
@@ -40,7 +47,7 @@ fetch(url, {
                 </div>
                 <div className="border-bottom mt-3  d-flex justify-content-between">
                     <p>{book.bookName}</p>
-                    <p>{book.length || 1}</p>
+                  <p> <input style={{width:'50px'}} type="number" name="" id=""/></p>
                     <p>$ {book.price}</p>
                 </div>
                 <div className="mt-3  d-flex justify-content-between">
