@@ -5,7 +5,8 @@
 }
 .addbook{
     height: fit-content;
-    background-color:rgb(220, 216, 216) !important;
+    background-color:rgba(200, 240, 243, 0.494) !important;
+    height: 100vh;
 }
 .navstyle a{
     background-color: inherit !important;

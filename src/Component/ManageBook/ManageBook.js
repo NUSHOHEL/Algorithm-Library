@@ -32,9 +32,9 @@ const ManageBook = () => {
 
     return (
         <div>
-            <div >
-                <table className="table">
-                    <thead>
+            <div className="table-responsive py-5">
+                <table className="table table-bordered table-hover">
+                    <thead className="thead-dark text-left">
                         <tr>
                             <th scope="col">Book</th>
                             <th scope="col">Author Name</th>
@@ -43,7 +43,7 @@ const ManageBook = () => {
                         </tr>
                     </thead>
                     {
-                        books.map(book => <tbody>
+                        books.map(book => <tbody className="text-left">
                             <th scope="row">{book.bookName}</th>
                             <td>{book.author} </td>
                             <td>{book.price} </td>

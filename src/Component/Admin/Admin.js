@@ -16,12 +16,14 @@ const Admin = () => {
                 </div>
             </div>
             <div className="col-9 text-center addbook">
-                <h1>Add Book</h1>
+                
                 <div className="tab-content " id="nav-tabContent">
                     <div className="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <h1 className="mt-4">Manage Books</h1>
                         <ManageBook />
                     </div>
                     <div className="tab-pane fade p-3" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    <h1 className="mt-4">Add Book</h1>
                         <AddBook></AddBook>
                     </div>
                 </div>

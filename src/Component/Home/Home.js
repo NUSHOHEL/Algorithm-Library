@@ -12,8 +12,8 @@ const Home = () => {
     }, [])
     return (
         <div className="bg-light">
-            <div className="d-flex justify-content-center p-5">
-                <div className=" input-group w-50">
+            <div className="d-flex justify-content-center p-5 flex-wrap">
+                <div className=" input-group w-75">
                     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
                     <div class="input-group-append">
                         <span class="input-group-text">Search</span>
