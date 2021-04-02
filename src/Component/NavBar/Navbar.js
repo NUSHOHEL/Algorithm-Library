@@ -5,23 +5,21 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <div>
-            <ul className="nav bg-dark justify-content-end">
-                <li className="nav-item ">
-                    <Link to='/home' className="nav-link active" >Home</Link>
-                </li>
-                <li className="nav-item">
-                    <Link to ='/orders' className="nav-link">Orders</Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/admin" className="nav-link">Admin</Link>
-                </li>
-                <li className="nav-item">
-                    <Link to="/cart" className="nav-link" >Cart</Link>
-                </li>
-                <li className="nav-item mr-5">
-                    <Link to="/login" className="nav-link btn btn-primary" >Login</Link>
-                </li>
-            </ul>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand" href="#">পাঠাগার</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div className="navbar-nav ">
+                    <Link to='/home' className="nav-link nav-item active" >Home</Link>
+                    <Link to ='/orders' className="nav-item nav-link active">Orders</Link>
+                    <Link to="/admin" className="nav-item nav-link active">Admin</Link>
+                    <Link to="/cart" className="nav-item nav-link active" >Cart</Link>
+                    <Link to="/login" className="nav-item nav-link active" >Login</Link>
+                    </div>
+                </div>
+            </nav>
         </div>
     );
 };

@@ -7,8 +7,8 @@ import ManageBook from '../ManageBook/ManageBook';
 const Admin = () => {
     return (
         <div className="row">
-            <div className="col-3 sideNavBar text-center">
-                <h1>Book Shop</h1>
+            <div className="col-3 sideNavBar text-center ">
+                <h1 className="mt-4">Book Shop</h1>
                 <div className="list-group navstyle" id="list-tab" role="tablist">
                     <a className="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Manage Books</a>
                     <a className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Add Book</a>

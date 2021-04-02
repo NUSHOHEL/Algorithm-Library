@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./ManageBook.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt, faEdit, faPenSquare } from '@fortawesome/free-solid-svg-icons'
 
 const ManageBook = () => {
     const [books, setbooks] = useState([])
@@ -47,9 +49,11 @@ const ManageBook = () => {
                             <th scope="row">{book.bookName}</th>
                             <td>{book.author} </td>
                             <td>{book.price} </td>
-                            <td><button onClick={()=>editBook(book._id)}>Edit</button>
-                            <button onClick={() => deleteBook(book._id)}>
-                                Delete
+                            <td><button onClick={()=>editBook(book._id)} className="btn btn-primary ml-2">
+                                <FontAwesomeIcon icon={faPenSquare}/>
+                                </button>
+                            <button onClick={() => deleteBook(book._id)} className="btn btn-danger ml-2">
+                            <FontAwesomeIcon icon={faTrashAlt} />
                             </button>
                             
                             </td>

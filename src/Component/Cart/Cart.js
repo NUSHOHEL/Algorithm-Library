@@ -47,10 +47,10 @@ fetch(url, {
                 </div>
                 <div className="border-bottom mt-3  d-flex justify-content-between">
                     <p>{book.bookName}</p>
-                  <p> <input style={{width:'50px'}} type="number" name="" id=""/></p>
+                  <p> 1 </p>
                     <p>$ {book.price}</p>
                 </div>
-                <div className="mt-3  d-flex justify-content-between">
+                <div className="mt-3 d-flex justify-content-between">
                     <p>Total</p>
                     <p>$ {book.price} </p>
                 </div>
