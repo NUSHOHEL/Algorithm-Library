@@ -20,9 +20,9 @@ const Orders = () => {
                     <h1>Total Orders {order.length}</h1>
                 </div>
                 <div className=" d-flex flex-wrap  justify-content-around mt-5">
-                    {order.map(order => <div className="card mb-5 style">
-                        <img class="card-img-top" src={order.image} alt="Card cap" />
-                        <div class="text-center">
+                    {order.map(order => <div className="card mb-5 style bg-dark">
+                        <img class="card-img-top p-3" src={order.image} alt="Card cap" />
+                        <div class="text-center text-light">
                            <p>{order.bookName}</p>
                            <p>Price: ${order.price}</p>
                         </div>

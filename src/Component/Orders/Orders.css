@@ -1,7 +1,4 @@
 .style{
-    height: 300px;
-    width: 300px;
-}
-.style img{
-    height:150px
+    width: 20rem;
+    border-radius: 20px;
 }
