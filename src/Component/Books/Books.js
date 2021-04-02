@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./Book.css"
 
 const Books = ({ book }) => {
-    console.log(book)
     return (
             <div className="card design p-2 mb-5">
                 <img src={book.image} className="card-img-top" alt="..." />

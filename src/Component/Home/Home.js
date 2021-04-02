@@ -4,7 +4,6 @@ import "./Home.css"
 
 const Home = () => {
     const [books, setbooks] = useState([])
-    console.log(books);
     useEffect(() => {
         fetch('https://rhubarb-crisp-91077.herokuapp.com/books')
             .then(res => res.json())

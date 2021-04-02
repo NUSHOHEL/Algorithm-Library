@@ -5,14 +5,12 @@ import { faTrashAlt,  faPenSquare } from '@fortawesome/free-solid-svg-icons'
 
 const ManageBook = () => {
     const [books, setbooks] = useState([])
-    console.log(books);
     useEffect(() => {
         fetch('https://rhubarb-crisp-91077.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setbooks(data))
     }, [])
     const deleteBook = (id) => {
-        console.log(id)
         fetch(`https://rhubarb-crisp-91077.herokuapp.com/delete/${id}`, {
             method: "DELETE"
         })
